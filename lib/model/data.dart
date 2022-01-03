@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:html/parser.dart' as html;
+import 'package:get/get.dart';
 
 class Data {
-  String? productName;
-  String? price;
+  var productName = ''.obs;
+  var price = ''.obs;
 
   Future<void> getData() async {
     List<String> lastResultName = [];
@@ -24,8 +25,8 @@ class Data {
         .map((e) => e.getElementsByTagName('span')[0].innerHtml)
         .toList();
 
-    productName = lastResultName[0];
-    price = lastResultPrice[0];
+    productName.value = lastResultName[0];
+    price.value = lastResultPrice[0];
     print(productName);
   }
 }

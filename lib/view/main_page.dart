@@ -24,7 +24,7 @@ class MainPage extends StatelessWidget {
                 child: const Text('pick data')),
             const SizedBox(height: 30),
             Obx(
-              () => (dataC.data.value.productName == null)
+              () => (dataC.data.productName.value == '')
                   ? const Text("Tidak ada data")
                   : Container(
                       height: 150,
@@ -45,9 +45,9 @@ class MainPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Product : ${dataC.data.value.productName}'),
+                            Text('Product : ${dataC.data.productName.value}'),
                             const SizedBox(height: 5),
-                            Text('harga : ${dataC.data.value.price}'),
+                            Text('harga : ${dataC.data.price.value}'),
                           ],
                         ),
                       ),
